@@ -6,7 +6,7 @@ import "server-only";
 // Certifcado
 
 const decodedKey = Buffer.from(
-  process.env.FIREBASE_PRIVATE_KEY_BASE64!,
+  process.env.FIREBASE_PRIVATE_KEYBASE64!,
   "base64"
 ).toString("utf-8");
 
@@ -29,7 +29,7 @@ export const db = getFirestore();
 export const storage = getStorage().bucket();
 
 export async function getDownloadURLFromPath(path?: string) {
-  if (!path) return "";
+  if (!path) return;
 
   const file = storage.file(path);
 
@@ -37,6 +37,6 @@ export async function getDownloadURLFromPath(path?: string) {
     action: "read",
     expires: "03-01-2500", // Não deixa expirar
   });
-
+  console.log(url);
   return url;
 }
