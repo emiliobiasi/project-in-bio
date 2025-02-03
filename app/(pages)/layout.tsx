@@ -15,6 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="YpGup2GRkDYCt9-yAyiwTJeRZnv61-zx8Uw766kOeSM"
+        />
+      </head>
       <body
         className={`${redHatDisplay.className} bg-background-primary text-content-body antialiased`}
       >
