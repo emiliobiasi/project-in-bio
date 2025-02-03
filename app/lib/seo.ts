@@ -37,7 +37,7 @@ export function getSEOTags({
       title: appName,
       description: appDescription,
       card: "summary_large_image",
-      creator: "@vinifrags",
+      creator: "@emilio_biasi",
     },
 
     alternates: {
