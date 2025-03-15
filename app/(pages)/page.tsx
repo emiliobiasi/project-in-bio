@@ -6,6 +6,7 @@ import Pricing from "../components/landing-page/pricing";
 import VideoExplanation from "../components/landing-page/video-explanation";
 import { trackServerEvent } from "../lib/mixpanel";
 import { getSEOTags } from "../lib/seo";
+import Footer from "../components/landing-page/footer";
 
 export const metadata: Metadata = getSEOTags({
   appName: "ProjectInBio",
@@ -28,6 +29,7 @@ export default function Home() {
       <VideoExplanation />
       <Pricing />
       <FAQ />
+      <Footer />
     </div>
   );
 }
