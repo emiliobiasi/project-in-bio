@@ -4,9 +4,16 @@ import stripe from "@/app/lib/stripe";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.text();
+    console.log("Raw Body:", body);
     const signature = req.headers.get("stripe-signature");
 
     const secret = process.env.STRIPE_WEBHOOK_SECRET;
