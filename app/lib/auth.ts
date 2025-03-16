@@ -21,6 +21,8 @@ declare module "next-auth" {
 }
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
+  trustHost: true, // ✅ Confia no host atual
+  basePath: "/api/auth", // ⚠️ Necessário para deploy em subcaminhos
   adapter: FirestoreAdapter({
     credential: firebaseCert,
   }),
