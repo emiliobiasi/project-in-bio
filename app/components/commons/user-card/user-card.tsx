@@ -20,7 +20,7 @@ export default async function UserCard({
   const icons = [Github, Instagram, Linkedin, Twitter, Plus];
 
   const profileImage = isLandingPage
-    ? "/emiliobiasi1.png"
+    ? "/emiliobiasi1.jpg"
     : (await getDownloadURLFromPath(profileData?.imagePath)) ||
       "/profilepic-placeholder.png";
 
