@@ -30,11 +30,11 @@ export default function ProjectCard({
 
   return (
     <Link href={formattedUrl} target="_blank" onClick={handleClick}>
-      <div className="w-[340px] h-[132px] flex gap-5 bg-background-secondary p-3 rounded-[20px] border border-transparent hover:border-border-secondary">
-        <div className="size-24 rounded-md overflow-hidden flex-shrink-0">
+      <div className="w-full max-w-[340px] h-[120px] lg:h-[132px] flex gap-3 lg:gap-5 bg-background-secondary p-2 lg:p-3 rounded-[20px] border border-transparent hover:border-border-secondary">
+        <div className="size-20 lg:size-24 rounded-md overflow-hidden flex-shrink-0">
           <img src={img} alt="Projeto" className="w-full h-full object-cover" />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 lg:gap-2">
           {isOwner && (
             <span className="uppercase text-xs font-bold text-accent-green">
               {project?.totalVisits || 0} cliques
@@ -42,10 +42,10 @@ export default function ProjectCard({
           )}
 
           <div className="flex flex-col">
-            <span className="text-white font-bold">
+            <span className="text-white font-bold text-sm lg:text-base">
               {name || project?.projectName}
             </span>
-            <span className="text-content-body text-sm">
+            <span className="text-white font-bold text-sm lg:text-base">
               {description || project?.projectDescription}
             </span>
           </div>

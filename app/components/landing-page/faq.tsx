@@ -32,10 +32,12 @@ const faqItems = [
 ];
 export default function FAQ() {
   return (
-    <div className="my-20 flex flex-col items-center gap-16">
-      <h3 className="text-4xl font-bold text-white">Dúvidas frequentes</h3>
-      <div className="flex gap-3">
-        <div className="flex flex-col gap-3">
+    <div className="my-12 lg:my-20 flex flex-col items-center gap-8 lg:gap-16 px-4">
+      <h3 className="text-2xl lg:text-4xl font-bold text-white text-center">
+        Dúvidas frequentes
+      </h3>
+      <div className="flex flex-col lg:flex-row gap-3 w-full max-w-[720px]">
+        <div className="flex flex-col gap-3 w-full">
           {faqItems.slice(0, Math.ceil(faqItems.length / 2)).map((item) => (
             <FAQItem
               key={item.title}
@@ -44,7 +46,7 @@ export default function FAQ() {
             />
           ))}
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 w-full">
           {faqItems.slice(Math.ceil(faqItems.length / 2)).map((item) => (
             <FAQItem
               key={item.title}
@@ -65,9 +67,9 @@ function FAQItem({
   description: string;
 }) {
   return (
-    <div className="w-[351px] h-min flex flex-col gap-3 p-5 rounded-2xl border borber border-border-primary bg-background-primary">
+    <div className="w-full lg:w-[351px] h-min flex flex-col gap-3 p-4 lg:p-5 rounded-2xl border border-border-primary bg-background-primary">
       <p className="font-bold text-white">{title}</p>
-      <p className="text-content-body">{description}</p>
+      <p className="text-content-body text-sm lg:text-base">{description}</p>
     </div>
   );
 }
